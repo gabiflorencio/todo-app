@@ -57,8 +57,9 @@
 (defn todo-list []
   [:ul.todo-list
    (for [todo (:todos @app-state)]
-     ^{:key (:id todo)}
-     [:li.todo-item (:title todo)])])
+     ^{:key (:todos/id todo)} ;; <-- CORRIGIDO
+     [:li.todo-item
+      (:todos/title todo)])]) ;; <-- CORRIGIDO
 
 (defn app []
   [:div.todo-app
